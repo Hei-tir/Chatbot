@@ -4,24 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot Simples</title>
+    <title>Chat da Kitty 💌</title>
+
+    <!-- Fonte fofa -->
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div id="chat-container">
-        <h1>Meu Chatbot</h1>
+        <h1>🎀 Chat da Kitty</h1>
+
         <div id="chat-log">
-            <!-- As mensagens do chat aparecerão aqui -->
-            <p class="bot-message">Olá! Digite sua mensagem abaixo.</p>
+            <p class="bot-message">Olá, amorzinho! 💕 O que você quer conversar hoje?</p>
         </div>
+
         <div id="input-area">
-            <input type="text" id="user-input" placeholder="Digite sua mensagem...">
-            <button id="send-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <input type="text" id="user-input" placeholder="Digite algo fofo...">
+            <button id="send-button">
+                <!-- Ícone de aviãozinho (mensagem) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="22" y1="2" x2="11" y2="13"></line>
                     <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                </svg></button>
+                </svg>
+            </button>
         </div>
     </div>
 
