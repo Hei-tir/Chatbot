@@ -34,7 +34,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 async function getGeminiResponse(userMessage) {
     try {
-        const prompt = `Você é a Namorada do usuario, responda a mensagem de forma consiça e coerrente:\n\nUsuário: ${userMessage}\nAssistente:`;
+        const prompt = `Você é um assistente do usuario chamado Chatbot, responda a mensagem de forma consiça e coerrente:\n\nUsuário: ${userMessage}\nAssistente:`;
 
         console.log("Enviando para Gemini:", prompt); // Log para depuração
 
