@@ -1,31 +1,37 @@
+/* --- Color Variables --- */
+:root {
+    --bg-base: #fdf1f4;        /* body background */
+    --chat-bg: #ffe8f0;        /* #chat-container */
+    --user-msg: #f9d5e5;       /* .user-message */
+    --bot-msg: #e3a6b6;        /* .bot-message */
+    --input-bg: #fcd6e2;       /* #user-input */
+    --send-btn: #f9d5e5;       /* #send-button */
+    --send-btn-hover: #e3a6b6; /* Hover state */
+}
+
 /* --- Global Styles & Body --- */
 body {
-    /* Use system fonts for better performance and native feel */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     margin: 0;
     padding: 20px;
-    /* Lighter, slightly cool background */
-    background-color: #eef1f5;
+    background-color: var(--bg-base);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    box-sizing: border-box; /* Include padding in element's total width/height */
+    box-sizing: border-box;
 }
 
 /* --- Chat Container --- */
 #chat-container {
-    background-color: #fff;
-    /* Slightly larger radius */
+    background-color: var(--chat-bg);
     border-radius: 12px;
-    /* Softer shadow */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     width: 90%;
     max-width: 500px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    /* Give it more height relative to viewport, but with a max */
     height: 85vh;
     max-height: 700px;
 }
@@ -33,56 +39,46 @@ body {
 /* --- Header --- */
 h1 {
     text-align: center;
-    padding: 18px 15px; /* Adjusted padding */
+    padding: 18px 15px;
     margin: 0;
-    /* Removed background, relying on border now */
-    color: #333; /* Darker text */
+    color: #333;
     font-size: 1.1em;
-    font-weight: 600; /* Slightly bolder */
-    /* Subtle border to separate header */
+    font-weight: 600;
     border-bottom: 1px solid #f0f0f0;
 }
 
 /* --- Chat Log --- */
 #chat-log {
-    flex-grow: 1; /* Takes available space */
-    overflow-y: auto; /* Scroll for overflow */
-    padding: 20px 15px; /* More vertical padding */
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px 15px;
     display: flex;
     flex-direction: column;
-    /* Add space between messages */
     gap: 12px;
-    /* Smooth scrolling */
     scroll-behavior: smooth;
 }
 
 /* --- Message Bubbles --- */
 #chat-log p {
     padding: 10px 15px;
-    /* More rounded bubbles */
     border-radius: 20px;
-    max-width: 80%; /* Slightly wider max */
+    max-width: 80%;
     line-height: 1.45;
-    /* Ensure long words wrap */
     word-wrap: break-word;
-    margin: 0; /* Remove default margin, using gap now */
+    margin: 0;
 }
 
 .user-message {
-    /* A standard, pleasant blue */
-    background-color: #007bff;
+    background-color: var(--user-msg);
     color: white;
-    align-self: flex-end; /* Align right */
-    /* Make the corner towards the edge less rounded */
+    align-self: flex-end;
     border-bottom-right-radius: 5px;
 }
 
 .bot-message {
-    /* Light gray, good contrast */
-    background-color: #e9e9eb;
-    color: #2c2c2c; /* Dark gray text */
-    align-self: flex-start; /* Align left */
-     /* Make the corner towards the edge less rounded */
+    background-color: var(--bot-msg);
+    color: #2c2c2c;
+    align-self: flex-start;
     border-bottom-left-radius: 5px;
 }
 
@@ -92,87 +88,79 @@ h1 {
     align-self: center;
     text-align: center;
     font-style: italic;
-    width: 90%; /* Make error messages wider */
-    border-radius: 8px; /* Less rounded than chat bubbles */
+    width: 90%;
+    border-radius: 8px;
 }
 
 /* --- Input Area --- */
 #input-area {
     display: flex;
-    align-items: center; /* Vertically align input and button */
+    align-items: center;
     padding: 12px 15px;
-    /* Remove background color for cleaner look */
-    /* Subtle border to separate from chat log */
     border-top: 1px solid #f0f0f0;
 }
 
 #user-input {
     flex-grow: 1;
-    padding: 12px 18px; /* More padding */
-    border: none; /* Remove default border */
-    /* Very light gray background */
-    background-color: #f0f2f5;
-    border-radius: 22px; /* Match button style */
+    padding: 12px 18px;
+    border: none;
+    background-color: var(--input-bg);
+    border-radius: 22px;
     margin-right: 10px;
     font-size: 1em;
-    /* Remove outline on focus */
     outline: none;
-    resize: none; /* Prevent resizing if it were a textarea */
+    resize: none;
 }
 
-/* Optional: Subtle focus indicator */
 #user-input:focus {
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
 }
 
 /* --- Send Button --- */
 #send-button {
-    /* Use flexbox to center icon inside */
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Make it round */
     width: 44px;
     height: 44px;
-    padding: 0; /* Remove padding, size controlled by width/height */
-    background-color: #007bff; /* Match user message color */
+    padding: 0;
+    background-color: var(--send-btn);
     color: white;
     border: none;
-    border-radius: 50%; /* Perfectly round */
+    border-radius: 50%;
     cursor: pointer;
-    /* Prevent button from shrinking */
     flex-shrink: 0;
     transition: background-color 0.2s ease;
 }
 
 #send-button svg {
-    /* Size the icon */
     width: 20px;
     height: 20px;
 }
 
 #send-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: var(--send-btn-hover);
 }
 
 #send-button:disabled {
-    background-color: #bcc0c4; /* Muted gray when disabled */
+    background-color: #bcc0c4;
     cursor: not-allowed;
 }
 
-/* Improve scrollbar appearance (Webkit browsers like Chrome/Safari/Edge) */
+/* Scrollbar Styling */
 #chat-log::-webkit-scrollbar {
     width: 6px;
 }
 
 #chat-log::-webkit-scrollbar-track {
-    background: transparent; /* Make track invisible */
+    background: transparent;
 }
 
 #chat-log::-webkit-scrollbar-thumb {
-    background-color: #ccc; /* Color of the scroll thumb */
-    border-radius: 3px; /* Rounded thumb */
+    background-color: #ccc;
+    border-radius: 3px;
 }
+
 #chat-log::-webkit-scrollbar-thumb:hover {
-    background-color: #aaa; /* Darker on hover */
+    background-color: #aaa;
 }
