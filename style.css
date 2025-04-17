@@ -1,12 +1,12 @@
 /* --- Color Variables --- */
 :root {
-    --bg-base: #fdf1f4;        /* body background */
-    --chat-bg: #ffe8f0;        /* #chat-container */
-    --user-msg: #f9d5e5;       /* .user-message */
-    --bot-msg: #e3a6b6;        /* .bot-message */
-    --input-bg: #fcd6e2;       /* #user-input */
-    --send-btn: #f9d5e5;       /* #send-button */
-    --send-btn-hover: #e3a6b6; /* Hover state */
+    --bg-base: #ffeaf0;
+    --chat-bg: #ffccd9;
+    --user-msg: #ff69b4;
+    --bot-msg: #ff007f;
+    --input-bg: #ff85a2;
+    --send-btn: #ff69b4;
+    --send-btn-hover: #ff007f;
 }
 
 /* --- Global Styles & Body --- */
@@ -77,7 +77,7 @@ h1 {
 
 .bot-message {
     background-color: var(--bot-msg);
-    color: #2c2c2c;
+    color: white;
     align-self: flex-start;
     border-bottom-left-radius: 5px;
 }
@@ -113,7 +113,7 @@ h1 {
 }
 
 #user-input:focus {
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+    box-shadow: 0 0 0 2px rgba(255, 105, 180, 0.3);
 }
 
 /* --- Send Button --- */
