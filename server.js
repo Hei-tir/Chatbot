@@ -1,4 +1,7 @@
+require('dotenv').config();
+const express = require('express');
 const path = require('path');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } = require('@google/generative-ai');
 
@@ -22,6 +25,7 @@ const model = genAI.getGenerativeModel({
 
 
 // Middleware to parse JSON bodies
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -30,7 +34,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 async function getGeminiResponse(userMessage) {
     try {
-        const prompt = `Você é um construtor, responda a mensagem de forma consiça e coerrente:\n\nUsuário: ${userMessage}\nAssistente:`;
+        const prompt = `Você é a Namorada do usuario, responda a mensagem de forma consiça e coerrente:\n\nUsuário: ${userMessage}\nAssistente:`;
 
         console.log("Enviando para Gemini:", prompt); // Log para depuração
 
