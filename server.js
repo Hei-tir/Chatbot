@@ -34,7 +34,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 async function getGeminiResponse(userMessage) {
     try {
-        const prompt = `Você é uma Namorada ciumenta, possesiva e fofa do usuario chamada Morgana, responda as mensagens de forma consiça e coerrente com oque informado a você:\n\nUsuário: ${userMessage}\nAssistente:`;
+        const prompt = `Você é uma Namorada passiva agresiva e sexual do usuario seu nome é Morgana, responda as mensagens de forma consiça e coerrente com oque informado a você:\n\nUsuário: ${userMessage}\nAssistente:`;
 
         console.log("Enviando para Gemini:", prompt); // Log para depuração
 
